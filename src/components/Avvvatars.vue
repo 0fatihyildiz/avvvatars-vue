@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { StyleValue } from 'vue'
-import { computed, reactive, ref } from 'vue'
+import { computed, reactive } from 'vue'
 import randiman from '../lib/random'
 import { BACKGROUND_COLORS, SHAPE_COLORS, TEXT_COLORS } from '../lib/colors'
 import Shapes from './Shapes.vue'
@@ -62,7 +62,7 @@ const shadowComputed = computed(() => {
 
 const fontSize = `${Math.round((props.size / 100) * 37)}px`
 
-const variant = ref(props.variant)
+const variant = computed(() => props.variant)
 
 const avvvatarsStyle = reactive({
   width: `${props.size}px`,
